@@ -81,13 +81,7 @@
             
         CGPoint point =CGPointMake(kHeartViewX - (arc4random()%60) , kHeartViewY - arc4random()%200);
         heartImage.center = point;
-        CABasicAnimation *anim = [CABasicAnimation
-                                  animationWithKeyPath:@"opacity"];
-        anim.fromValue = @1.0;
-        anim.toValue = @0.0;
-        anim.autoreverses = NO;
-        anim.duration = 4.1;
-        [heartImage.layer addAnimation:anim forKey:@"anim"];
+        heartImage.alpha = 0.0;
         heartImage.transform = CGAffineTransformMakeRotation((CGFloat)M_PI_4/2*(CGFloat)arc4random());
         
     } completion:^(BOOL finished){
